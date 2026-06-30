@@ -1,0 +1,44 @@
+import React from 'react';
+
+function App() {
+  return (
+    <div className="container py-5">
+      <header className="mb-5 text-center">
+        <h1 style={{ color: 'var(--color-primary)' }}>Cuidar el Alma</h1>
+        <p style={{ color: 'var(--color-text-soft)' }}>
+          Panel de control de estilo - Equipo DEXUS
+        </p>
+      </header>
+
+      {/* Sección de Colores */}
+      <section className="mb-5">
+        <h2>Paleta de Colores</h2>
+        <div className="d-flex flex-wrap gap-3">
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>Primario</div>
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-secondary)', color: 'white' }}>Secundario</div>
+          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>Acento</div>
+          <div className="p-3 rounded border" style={{ backgroundColor: 'var(--color-background)' }}>Fondo</div>
+        </div>
+      </section>
+
+      {/* Sección de Componentes */}
+      <section>
+        <h2>Componentes Base</h2>
+        <div className="card p-4 shadow-sm" style={{ borderColor: 'var(--color-border)' }}>
+          <h3>Tarjeta de Ejemplo</h3>
+          <p>Esta es una tarjeta utilizando los estilos globales del sistema.</p>
+          <div className="d-flex gap-2">
+            <button className="btn" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
+              Botón Primario
+            </button>
+            <button className="btn btn-outline-secondary">
+              Botón Secundario
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default App;

@@ -1,0 +1,48 @@
+/* src/styles/global.css */
+
+:root {
+  /* Colores Principales (Basados en la paleta de Thasi) */
+  --color-primary: #5B8FB9;
+  --color-secondary: #94B89C;
+  --color-accent: #E8B86A;
+  --color-background: #FBF6EC;
+  
+  /* Colores Semánticos */
+  --color-success: #7CA88A;
+  --color-danger: #C97064;
+  --color-warning: #E8B86A;
+  --color-info: #5B8FB9;
+  
+  /* Neutros (Requeridos por el Sprint) */
+  --color-text-strong: #3D2E26;
+  --color-text-soft: #6B5D55;
+  --color-border: #ECDDC0;
+  --color-white: #FFFFFF;
+  
+  /* Variables funcionales exigidas */
+  --color-dark-gray: #6B5D55;
+  --color-light-gray: #ECDDC0;
+}
+
+/* Reseteo básico y estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-strong);
+  font-family: sans-serif; /* Sasha definirá las fuentes definitivas aquí */
+  line-height: 1.5;
+}
+
+/* Ajuste para que los contenedores usen nuestra paleta si es necesario */
+.bg-cream {
+  background-color: var(--color-background);
+}
+
+.text-brand {
+  color: var(--color-text-strong);
+}
