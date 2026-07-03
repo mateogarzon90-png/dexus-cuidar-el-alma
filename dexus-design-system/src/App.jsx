@@ -1,42 +1,51 @@
 import React from 'react';
+// ¡Atención aquí! Asegúrate de que la ruta coincida con donde pusiste la carpeta
+import Button from './components/ui/Button/Button.jsx';
 
 function App() {
   return (
-    <div className="container py-5">
-      <header className="mb-5 text-center">
-        <h1 style={{ color: 'var(--color-primary)' }}>Cuidar el Alma</h1>
-        <p style={{ color: 'var(--color-text-soft)' }}>
-          Panel de control de estilo - Equipo DEXUS
-        </p>
-      </header>
+    <div style={{ padding: '40px', fontFamily: 'system-ui, sans-serif', backgroundColor: '#ffffff', minHeight: '100vh' }}>
+      <h1 style={{ color: '#3D2E26', marginBottom: '30px' }}>
+        Pruebas de Componente: Button (DEXUS)
+      </h1>
 
-      {/* Sección de Colores */}
-      <section className="mb-5">
-        <h2>Paleta de Colores</h2>
-        <div className="d-flex flex-wrap gap-3">
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>Primario</div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-secondary)', color: 'white' }}>Secundario</div>
-          <div className="p-3 rounded" style={{ backgroundColor: 'var(--color-accent)', color: 'white' }}>Acento</div>
-          <div className="p-3 rounded border" style={{ backgroundColor: 'var(--color-background)' }}>Fondo</div>
+      {/* PRUEBA 1: VARIANTES DE COLOR */}
+      <section style={{ marginBottom: '40px' }}>
+        <h2 style={{ fontSize: '1.2rem', color: '#6B5D55', marginBottom: '15px' }}>
+          1. Variantes de Color
+        </h2>
+        <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+          <Button variant="primary">Primary</Button>
+          <Button variant="secondary">Secondary</Button>
+          <Button variant="success">Success</Button>
+          <Button variant="danger">Danger</Button>
+          <Button variant="outline">Outline</Button>
         </div>
       </section>
 
-      {/* Sección de Componentes */}
+      {/* PRUEBA 2: TAMAÑOS */}
+      <section style={{ marginBottom: '40px' }}>
+        <h2 style={{ fontSize: '1.2rem', color: '#6B5D55', marginBottom: '15px' }}>
+          2. Tamaños (Props: size)
+        </h2>
+        <div style={{ display: 'flex', gap: '15px', alignItems: 'center', flexWrap: 'wrap' }}>
+          <Button variant="primary" size="sm">Small (sm)</Button>
+          <Button variant="primary" size="md">Medium (md)</Button>
+          <Button variant="primary" size="lg">Large (lg)</Button>
+        </div>
+      </section>
+
+      {/* PRUEBA 3: ESTADOS (Disabled) */}
       <section>
-        <h2>Componentes Base</h2>
-        <div className="card p-4 shadow-sm" style={{ borderColor: 'var(--color-border)' }}>
-          <h3>Tarjeta de Ejemplo</h3>
-          <p>Esta es una tarjeta utilizando los estilos globales del sistema.</p>
-          <div className="d-flex gap-2">
-            <button className="btn" style={{ backgroundColor: 'var(--color-primary)', color: 'white' }}>
-              Botón Primario
-            </button>
-            <button className="btn btn-outline-secondary">
-              Botón Secundario
-            </button>
-          </div>
+        <h2 style={{ fontSize: '1.2rem', color: '#6B5D55', marginBottom: '15px' }}>
+          3. Estados (Prop: disabled)
+        </h2>
+        <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
+          <Button variant="primary" disabled={true}>Primary Disabled</Button>
+          <Button variant="outline" disabled={true}>Outline Disabled</Button>
         </div>
       </section>
+
     </div>
   );
 }

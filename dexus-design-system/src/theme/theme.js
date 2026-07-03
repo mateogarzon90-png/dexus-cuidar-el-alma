@@ -1,7 +1,7 @@
 // theme.js — Cuidar el Alma · DEXUS
 // Paleta Sereno Cálido v1.0
 
-export const theme = {
+ const theme = {
 // Colores principales
 colors: {
 primary: '#5B8FB9', // Azul cielo
@@ -40,4 +40,4 @@ lineHeights: { tight: 1.2, normal: 1.5, relaxed: 1.7 },
 
 spacing: { xs: '4px', sm: '8px', md: '16px', lg: '24px', xl: '32px' },
 radius: { sm: '4px', md: '8px', lg: '12px', pill: '24px' },
-};
+}; // Fin del tema
