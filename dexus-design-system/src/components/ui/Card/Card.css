@@ -23,6 +23,7 @@
   background-color: #FFF9F0; 
   border: 3px solid #F5B041; 
   box-shadow: none;
+  
 }
 
 /* Elevada: El efecto "Juguete 3D". Sombra sólida gruesa en color miel */
@@ -49,3 +50,5 @@
 .dexus-card-outline:hover {
   background-color: rgba(245, 176, 65, 0.1); /* Se tiñe un poquito de miel al vuelo */
 }
+
+

@@ -13,4 +13,4 @@ const Card = ({ variant = 'normal', children }) => {
   );
 };
 
-export default Card;
+export default Card; 

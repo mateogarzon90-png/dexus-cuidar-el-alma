@@ -27,6 +27,7 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
+  
 }
 
 /* Efecto global para TODOS los botones al pasar el ratón */
@@ -101,4 +102,33 @@
 
 .dexus-btn-outline:hover:not(:disabled) {
   background-color: #FBF6EC; 
+}
+
+
+
+.dexus-btn-plastilina {
+  background-color: #5B8FB9; /* Un rojo/rosa vibrante y amigable */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px; /* Bordes muy redondos (píldora) */
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease; /* Transición suave para la animación */
+
+  /* El secreto del efecto plastilina */
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.15),             /* 1. Sombra exterior (profundidad en la página) */
+    inset -6px -6px 12px rgba(0, 0, 0, 0.2),      /* 2. Sombra interna oscura (crea la barriga/volumen inferior) */
+    inset 6px 6px 12px rgba(255, 255, 255, 0.8);  /* 3. Sombra interna blanca (crea el reflejo de luz superior) */
+}
+
+/* Efecto al hacer clic (apretar la plastilina) */
+.dexus-btn-plastilina:active {
+  transform: scale(0.92); /* El botón se encoge un poco */
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.1), 
+    inset -4px -4px 8px rgba(0, 0, 0, 0.2), 
+    inset 4px 4px 8px rgba(255, 255, 255, 0.8);
 }

@@ -20,9 +20,13 @@ function App() {
           <Button variant="secondary">Secondary</Button>
           <Button variant="success">Success</Button>
           <Button variant="danger">Danger</Button>
-          <Button variant="outline">Outline</Button>
+          <Button variant="outline">Outline</Button>        
+          <Button variant="plastilina" size="lg">¡Jugar Ahora!</Button>
+          
         </div>
       </section>
+
+      
 
       {/* PRUEBA 2: TAMAÑOS */}
       <section style={{ marginBottom: '40px' }}>
