@@ -1,54 +1,68 @@
-/* --- 1. BASE DE LA TARJETA (Kids UI Dinámico) --- */
+/* --- 1. BASE DE LA TARJETA (Kids UI Definitivo) --- */
 .dexus-card {
-  border-radius: 30px; /* Bordes extra redondos, casi como nubes */
+  border-radius: 30px; 
   padding: 24px;
   color: #3D2E26;
   box-sizing: border-box;
   width: 100%;
   font-family: inherit;
-  
-  /* Animación de rebote fluida para que parezca viva al pasar el ratón */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Efecto global: todas las tarjetas "saltan" un poquito al pasar el ratón */
-.dexus-card:hover {
-  transform: translateY(-5px);
-}
+/* --- 2. VARIANTES CLAY-BRUTALISM (Juguete de Plastilina) --- */
 
-/* --- 2. VARIANTES CON COLOR MIEL (#F5B041) --- */
-
-/* Normal: Fondo crema muy suave con un borde miel sólido */
+/* Normal: Fondo crema, borde miel grueso y textura suave en el centro */
 .dexus-card-normal {
   background-color: #FFF9F0; 
-  border: 3px solid #F5B041; 
-  box-shadow: none;
+  border: 3px solid #F5B041; /* Recuperamos el borde miel */
   
+  /* Sombra exterior suave + reflejos internos de plastilina */
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.06),             
+    inset -5px -5px 10px rgba(0, 0, 0, 0.03),      
+    inset 5px 5px 10px rgba(255, 255, 255, 0.9);
 }
 
-/* Elevada: El efecto "Juguete 3D". Sombra sólida gruesa en color miel */
+.dexus-card-normal:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    12px 12px 20px rgba(0, 0, 0, 0.06),             
+    inset -5px -5px 10px rgba(0, 0, 0, 0.03),      
+    inset 5px 5px 10px rgba(255, 255, 255, 0.9);
+}
+
+/* Elevada: El Bloque 3D perfecto. Borde miel, sombra dura y centro de goma */
 .dexus-card-elevada {
   background-color: #FFFFFF;
-  border: 3px solid #F5B041;
-  /* Esta es la magia: una sombra dura que le da volumen físico */
-  box-shadow: 0 8px 0 #F5B041; 
+  border: 3px solid #F5B041; /* Recuperamos el borde miel */
+  
+  /* 1. Sombra dura miel (el bloque 3D) 
+     2. Sombra interna oscura (volumen) 
+     3. Sombra interna blanca (brillo superior) */
+  box-shadow: 
+    0 8px 0 #F5B041,             
+    inset -6px -6px 12px rgba(0, 0, 0, 0.04),      
+    inset 6px 6px 12px rgba(255, 255, 255, 1); 
 }
 
-/* Al pasar el ratón, la tarjeta elevada flota un poco más y la sombra crece */
+/* Al pasar el ratón, el bloque salta y la sombra dura crece */
 .dexus-card-elevada:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 11px 0 #F5B041;
+  transform: translateY(-6px);
+  box-shadow: 
+    0 14px 0 #F5B041,             
+    inset -6px -6px 12px rgba(0, 0, 0, 0.04),      
+    inset 6px 6px 12px rgba(255, 255, 255, 1);
 }
 
-/* Outline: Estilo "cuaderno de actividades" o recortable */
+/* Outline: Cuaderno de actividades */
 .dexus-card-outline {
-  background-color: transparent;
-  /* Borde punteado grueso súper divertido */
+  background-color: rgba(255, 255, 255, 0); 
   border: 4px dashed #F5B041; 
+  box-shadow: none;
 }
 
 .dexus-card-outline:hover {
-  background-color: rgba(245, 176, 65, 0.1); /* Se tiñe un poquito de miel al vuelo */
+  background-color: rgba(255, 255, 255, 0.8); /* Luz blanca al hacer hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil al flotar */
 }
-
-
