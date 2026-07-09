@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './components/ui/Button/Button';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         </p>
       </header>
 
-      {/* Sección de Colores */}
+      {/* Sección de Colores — Mateo */}
       <section className="mb-5">
         <h2>Paleta de Colores</h2>
         <div className="d-flex flex-wrap gap-3">
@@ -21,8 +22,8 @@ function App() {
         </div>
       </section>
 
-      {/* Sección de Componentes */}
-      <section>
+      {/* Sección de Componentes — Mateo */}
+      <section className="mb-5">
         <h2>Componentes Base</h2>
         <div className="card p-4 shadow-sm" style={{ borderColor: 'var(--color-border)' }}>
           <h3>Tarjeta de Ejemplo</h3>
@@ -37,6 +38,23 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Sección de Botones — Thais */}
+      <section className="mb-5">
+        <h2>Botones · Thais</h2>
+        <div className="d-flex flex-wrap gap-3 align-items-center">
+          <Button variant="primary" onClick={() => alert('Primary clicked')}>
+            Leer evangelio
+          </Button>
+          <Button variant="secondary" onClick={() => alert('Secondary clicked')}>
+            Saber más
+          </Button>
+          <Button variant="primary" disabled>
+            No disponible
+          </Button>
+        </div>
+      </section>
+
     </div>
   );
 }
