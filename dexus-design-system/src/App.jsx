@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './components/ui/Button/Button';
 import Input from './components/ui/Input/Input';
+import TextArea from './components/ui/TextArea/TextArea';
 
 function App() {
   return (
@@ -83,6 +84,29 @@ function App() {
           />
           <Input
             type="text"
+            label="Campo desactivado"
+            placeholder="No disponible"
+            disabled
+          />
+        </div>
+      </section>
+
+      {/* Sección de TextArea — Thais */}
+      <section className="mb-5">
+        <h2>TextArea · Thais</h2>
+        <div className="d-flex flex-column gap-4" style={{ maxWidth: '400px' }}>
+          <TextArea
+            label="Tu reflexión de hoy"
+            placeholder="Escribe una breve reflexión..."
+            maxLength={300}
+          />
+          <TextArea
+            label="Campo con error"
+            placeholder="Escribe algo..."
+            maxLength={200}
+            error="Este campo es obligatorio"
+          />
+          <TextArea
             label="Campo desactivado"
             placeholder="No disponible"
             disabled

@@ -1,0 +1,75 @@
+/* TextArea.css */
+/* Autor: Thais */
+
+/* Wrapper */
+.dexus-textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* Label */
+.dexus-textarea-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B5D55; /* TODO: reemplazar por var(--color-text-soft) */
+}
+
+/* TextArea base */
+.dexus-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ECDDC0; /* TODO: reemplazar por var(--color-border) */
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #3D2E26;  /* TODO: reemplazar por var(--color-text-strong) */
+  background: #FFFFFF; /* TODO: reemplazar por var(--color-white) */
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.6;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Focus */
+.dexus-textarea:focus {
+  border-color: #5B8FB9; /* TODO: reemplazar por var(--color-primary) */
+  box-shadow: 0 0 0 3px rgba(91, 143, 185, 0.18);
+}
+
+/* Error — borde */
+.dexus-textarea.dexus-textarea-error {
+  border-color: #C97064; /* TODO: reemplazar por var(--color-danger) */
+  background: #FDF0EE;
+}
+
+/* Disabled */
+.dexus-textarea:disabled {
+  background: #F5F0E8; /* TODO: reemplazar por var(--color-background) */
+  color: #8B7A65;      /* TODO: reemplazar por var(--color-text-soft) */
+  border-color: #ECDDC0; /* TODO: reemplazar por var(--color-border) */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Footer — contador y error */
+.dexus-textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Mensaje de error */
+.dexus-textarea-error-msg {
+  font-size: 12px;
+  color: #C97064; /* TODO: reemplazar por var(--color-danger) */
+}
+
+/* Contador de caracteres */
+.dexus-textarea-counter {
+  font-size: 12px;
+  color: #8B7A65; /* TODO: reemplazar por var(--color-text-muted) */
+  margin-left: auto;
+}
