@@ -1,0 +1,79 @@
+/* Input.css */
+/* Autor: Thais */
+
+/* Wrapper — contenedor general */
+.dexus-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+/* Label */
+.dexus-input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6B5D55; /* TODO: reemplazar por var(--color-text-soft) */
+}
+
+/* Contenedor del input e icono */
+.dexus-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Input base */
+.dexus-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #ECDDC0; /* TODO: reemplazar por var(--color-border) */
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #3D2E26; /* TODO: reemplazar por var(--color-text-strong) */
+  background: #FFFFFF; /* TODO: reemplazar por var(--color-white) */
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Focus */
+.dexus-input:focus {
+  border-color: #5B8FB9; /* TODO: reemplazar por var(--color-primary) */
+  box-shadow: 0 0 0 3px rgba(91, 143, 185, 0.18); /* TODO: reemplazar con var(--color-primary) */
+}
+
+/* Con icono */
+.dexus-input-with-icon {
+  padding-left: 36px;
+}
+
+/* Icono */
+.dexus-input-icon {
+  position: absolute;
+  left: 10px;
+  color: #8B7A65; /* TODO: reemplazar por var(--color-text-muted) */
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Error — borde */
+.dexus-input.dexus-input-error {
+  border-color: #C97064; /* TODO: reemplazar por var(--color-danger) */
+  background: #FDF0EE; /* TODO: reemplazar por tinte de var(--color-danger) */
+}
+
+/* Error — mensaje */
+.dexus-input-error-msg {
+  font-size: 12px;
+  color: #C97064; /* TODO: reemplazar por var(--color-danger) */
+}
+
+/* Disabled */
+.dexus-input:disabled {
+  background: #F5F0E8; /* TODO: reemplazar por var(--color-background) */
+  color: #8B7A65;      /* TODO: reemplazar por var(--color-text-soft) */
+  border-color: #ECDDC0; /* TODO: reemplazar por var(--color-border) */
+  cursor: not-allowed;
+  opacity: 0.7;
+}

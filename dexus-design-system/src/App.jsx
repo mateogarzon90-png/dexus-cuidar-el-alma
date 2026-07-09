@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './components/ui/Button/Button';
+import Input from './components/ui/Input/Input';
 
 function App() {
   return (
@@ -52,6 +53,40 @@ function App() {
           <Button variant="primary" disabled>
             No disponible
           </Button>
+        </div>
+      </section>
+
+      {/* Sección de Inputs — Thais */}
+      <section className="mb-5">
+        <h2>Inputs · Thais</h2>
+        <div className="d-flex flex-column gap-4" style={{ maxWidth: '400px' }}>
+          <Input
+            type="text"
+            label="Nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <Input
+            type="email"
+            label="Correo electrónico"
+            placeholder="nombre@ejemplo.com"
+          />
+          <Input
+            type="password"
+            label="Contraseña"
+            placeholder="••••••••"
+          />
+          <Input
+            type="text"
+            label="Campo con error"
+            placeholder="Escribe algo"
+            error="Este campo es obligatorio"
+          />
+          <Input
+            type="text"
+            label="Campo desactivado"
+            placeholder="No disponible"
+            disabled
+          />
         </div>
       </section>
 
