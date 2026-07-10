@@ -84,14 +84,14 @@ function App() {
           <Card variant="normal">
             <Input 
               label="Nombre de tu personaje" 
-              placeholder="Ej. Súper Mateo" 
+              placeholder="Ej. Ducky McDuck" 
             />
           </Card>
 
           {/* Input Requerido */}
           <Card variant="normal">
             <Input 
-              label="Correo mágico" 
+              label="Correo electrónico" 
               type="email" 
               placeholder="ejemplo@dexus.com" 
               required={true} 
