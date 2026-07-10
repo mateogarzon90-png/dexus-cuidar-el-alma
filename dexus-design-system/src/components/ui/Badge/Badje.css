@@ -1,0 +1,23 @@
+/* Gominolas estables y gorditas */
+.dexus-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 2px solid #3D2E26; /* Borde oscuro para dar contraste de cómic */
+  
+  /* Textura de caramelo: sin sombras exteriores, solo volumen interior */
+  box-shadow: 
+    inset -3px -3px 6px rgba(0, 0, 0, 0.15),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Variantes de color */
+.dexus-badge-info { background-color: #5B8FB9; color: #FFFFFF; }
+.dexus-badge-success { background-color: #94B89C; color: #FFFFFF; }
+.dexus-badge-warning { background-color: #F5B041; color: #3D2E26; }
+.dexus-badge-danger { background-color: #C97064; color: #FFFFFF; }
