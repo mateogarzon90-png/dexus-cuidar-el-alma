@@ -1,0 +1,43 @@
+.dexus-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 24px;
+  border: 3px solid #3D2E26;
+  font-family: 'Inter', system-ui, sans-serif;
+  
+  /* Bloque sólido estable, no se mueve al hacer hover */
+  box-shadow: 
+    4px 4px 0px #3D2E26, /* Sombra dura estilo cómic */
+    inset -4px -4px 10px rgba(0, 0, 0, 0.05),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.6);
+}
+
+.dexus-alert-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.dexus-alert-content {
+  flex: 1;
+}
+
+.dexus-alert-title {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3D2E26;
+}
+
+.dexus-alert-message {
+  font-size: 0.95rem;
+  color: #554338;
+  line-height: 1.4;
+}
+
+/* Colores pastel muy suaves de fondo para que el texto se lea perfecto */
+.dexus-alert-information { background-color: #E6F0F9; }
+.dexus-alert-success { background-color: #EAF4EC; }
+.dexus-alert-warning { background-color: #FDF4E6; }
+.dexus-alert-error { background-color: #F9EBE9; }

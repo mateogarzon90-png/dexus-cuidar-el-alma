@@ -1,63 +1,64 @@
-// TextArea.jsx
-// Autor: Thais
-// Componente: TextArea reutilizable con AutoResize y contador de caracteres
-// Props: label, placeholder, maxLength, disabled, error
+import React, { useId, useRef, useEffect } from 'react';
+import './TextArea.css';
 
-import { useState, useRef, useEffect } from 'react'
-import './TextArea.css'
-
-function TextArea({ 
+const TextArea = ({ 
   label, 
+  name,
+  value = '', 
+  onChange,
   placeholder, 
   maxLength, 
   disabled = false, 
   error 
-}) {
-  const [value, setValue] = useState('')
-  const textareaRef = useRef(null)
+}) => {
+  const textareaId = useId();
+  const textareaRef = useRef(null);
 
+  // Mantenemos la genial idea de Thais: Auto-resize
   useEffect(() => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto'
-      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px'
+      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
     }
-  }, [value])
-
-  function handleChange(e) {
-    setValue(e.target.value)
-  }
+  }, [value]);
 
   return (
-    <div className="dexus-textarea-wrapper">
-
+    <div className={`dexus-textarea-wrapper ${error ? 'dexus-textarea-has-error' : ''}`}>
+      
       {label && (
-        <label className="dexus-textarea-label">{label}</label>
+        <label htmlFor={textareaId} className="dexus-textarea-label">
+          {label}
+        </label>
       )}
 
       <textarea
+        id={textareaId}
         ref={textareaRef}
+        name={name}
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
         maxLength={maxLength}
-        className={`dexus-textarea ${error ? 'dexus-textarea-error' : ''}`}
+        className="dexus-textarea-field"
         rows={3}
       />
 
+      {/* Footer para organizar el mensaje de error y el contador */}
       <div className="dexus-textarea-footer">
-        {error && (
+        {error ? (
           <span className="dexus-textarea-error-msg">{error}</span>
-        )}
+        ) : <span />} {/* Span vacío para mantener el contador a la derecha */}
+        
         {maxLength && (
           <span className="dexus-textarea-counter">
-            {value.length} / {maxLength}
+            {value?.length || 0} / {maxLength}
           </span>
         )}
       </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default TextArea
+export default TextArea;

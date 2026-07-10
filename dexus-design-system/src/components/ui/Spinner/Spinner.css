@@ -1,0 +1,27 @@
+.dexus-spinner-wrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* El anillo base */
+.dexus-spinner {
+  border-radius: 50%;
+  /* Anillo de fondo color crema */
+  border: 6px solid #ECDDC0; 
+  /* El trozo azul que da vueltas */
+  border-top: 6px solid #5B8FB9; 
+  
+  /* Animación suave y constante */
+  animation: dexus-spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* Tamaños */
+.dexus-spinner-sm { width: 24px; height: 24px; border-width: 4px; }
+.dexus-spinner-md { width: 40px; height: 40px; border-width: 6px; }
+.dexus-spinner-lg { width: 64px; height: 64px; border-width: 8px; }
+
+@keyframes dexus-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
