@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* --- CONTENEDOR PRINCIPAL --- */
 .dexus-input-container {
     display: flex;
     flex-direction: column;
@@ -9,82 +8,79 @@
     font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* --- ETIQUETA (LABEL) --- */
 .dexus-input-label {
     font-size: 1rem;
-    font-weight: 700; /* Más gordita para que los niños la lean bien */
+    font-weight: 700; 
     color: #3D2E26;
     margin-bottom: 8px;
-    margin-left: 10px; /* Un poco sangrado para alinearse con los bordes redondos */
+    margin-left: 10px; 
 }
 
 .dexus-input-asterisk {
-    color: #C97064; /* Color Peligro/Error de la paleta */
+    color: #C97064; 
 }
 
-/* --- CAJA DE TEXTO (El hueco de plastilina) --- */
+/* --- CAJA DE TEXTO (El hueco de plastilina estable) --- */
 .dexus-input-field {
-    padding: 16px 24px; /* Mucho más grande y fácil de tocar con el dedo */
+    padding: 16px 24px; 
     font-size: 1.1rem;
     font-weight: 500;
     font-family: inherit;
     background-color: #FFFFFF;
     color: #3D2E26;
     outline: none;
-    
-    /* Base Brutalista */
     border: 3px solid #ECDDC0; 
-    border-radius: 24px; /* Forma de píldora / nube */
+    border-radius: 24px; 
     
-    /* El secreto: Sombra interna para que parezca "hundido" en la pantalla */
+    /* Mantenemos el hueco interno */
     box-shadow: 
         inset 4px 4px 8px rgba(0, 0, 0, 0.05),
         inset -4px -4px 8px rgba(255, 255, 255, 0.9);
         
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Transición limitada solo al borde y color, nada de transform */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Color del texto de ayuda (placeholder) */
 .dexus-input-field::placeholder {
     color: #A0968F;
     font-weight: 400;
 }
 
-/* --- ESTADO FOCUS (Cuando el niño hace clic para escribir) --- */
+/* --- ESTADO FOCUS (Activo, sin saltos) --- */
 .dexus-input-field:focus {
     border-color: #5B8FB9; /* Borde Azul Cielo */
     
-    /* Al escribir, la caja "salta" hacia el usuario con una sombra dura */
+    /* En lugar de saltar hacia afuera, proyecta un "aura" de color suave 
+       (glow ring) por fuera, manteniendo el hueco intacto por dentro */
     box-shadow: 
-        0 6px 0 #5B8FB9, 
-        inset 2px 2px 5px rgba(0, 0, 0, 0.02),
-        inset -2px -2px 5px rgba(255, 255, 255, 1);
-        
-    transform: translateY(-4px); /* Se levanta de la pantalla */
+        0 0 0 4px rgba(91, 143, 185, 0.2), 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.05),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.9);
 }
 
-/* --- ESTADO DESHABILITADO --- */
 .dexus-input-field:disabled {
     background-color: #FBF6EC;
     border-color: #E2D1B3;
     color: #6B5D55;
     cursor: not-allowed;
-    box-shadow: none; /* Pierde el volumen 3D */
-    transform: none;
+    box-shadow: none; 
 }
 
 /* --- CONTROL DE ERRORES --- */
 .dexus-input-has-error .dexus-input-field {
     border-color: #C97064;
-    background-color: #FFF5F4; /* Un fondo rojizo muy suave */
+    background-color: #FFF5F4; 
 }
 
 .dexus-input-has-error .dexus-input-field:focus {
+    /* El aura de enfoque cambia a rojo si hay error */
     box-shadow: 
-        0 6px 0 #C97064, /* La sombra 3D cambia a rojo */
-        inset 2px 2px 5px rgba(0, 0, 0, 0.02);
+        0 0 0 4px rgba(201, 112, 100, 0.2), 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.05),
+        inset -4px -4px 8px rgba(255, 255, 255, 0.9);
 }
 
+/* Mantenemos el temblor del texto de error porque es feedback útil y no afecta al layout */
 .dexus-input-error-message {
     color: #C97064;
     font-size: 0.9rem;
@@ -92,12 +88,9 @@
     margin-top: 8px;
     margin-left: 10px;
     margin-bottom: 0;
-    
-    /* ¡Animación divertida! El texto "tiembla" cuando hay un error */
     animation: shake 0.4s ease-in-out; 
 }
 
-/* Keyframes para la animación de temblor */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-4px); }

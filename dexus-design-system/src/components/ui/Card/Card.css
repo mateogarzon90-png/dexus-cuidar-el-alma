@@ -1,4 +1,4 @@
-/* --- 1. BASE DE LA TARJETA (Kids UI Definitivo) --- */
+/* --- BASE DE LA TARJETA (Estable y Sólida) --- */
 .dexus-card {
   border-radius: 30px; 
   padding: 24px;
@@ -6,53 +6,34 @@
   box-sizing: border-box;
   width: 100%;
   font-family: inherit;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Reducimos la transición: ahora solo animará el color de fondo si cambia, sin afectar al rendimiento */
+  transition: background-color 0.3s ease;
 }
 
-/* --- 2. VARIANTES CLAY-BRUTALISM (Juguete de Plastilina) --- */
+/* --- VARIANTES CLAY-BRUTALISM (Sin saltos) --- */
 
 /* Normal: Fondo crema, borde miel grueso y textura suave en el centro */
 .dexus-card-normal {
   background-color: #FFF9F0; 
-  border: 3px solid #F5B041; /* Recuperamos el borde miel */
-  
-  /* Sombra exterior suave + reflejos internos de plastilina */
+  border: 3px solid #F5B041; 
   box-shadow: 
-    8px 8px 16px rgba(0, 0, 0, 0.06),             
+    8px 8px 16px rgba(0, 0, 0, 0.04),             
     inset -5px -5px 10px rgba(0, 0, 0, 0.03),      
     inset 5px 5px 10px rgba(255, 255, 255, 0.9);
 }
+/* ELIMINADO: El :hover que hacía que saltara */
 
-.dexus-card-normal:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    12px 12px 20px rgba(0, 0, 0, 0.06),             
-    inset -5px -5px 10px rgba(0, 0, 0, 0.03),      
-    inset 5px 5px 10px rgba(255, 255, 255, 0.9);
-}
-
-/* Elevada: El Bloque 3D perfecto. Borde miel, sombra dura y centro de goma */
+/* Elevada: El Bloque 3D estático. */
 .dexus-card-elevada {
   background-color: #FFFFFF;
-  border: 3px solid #F5B041; /* Recuperamos el borde miel */
-  
-  /* 1. Sombra dura miel (el bloque 3D) 
-     2. Sombra interna oscura (volumen) 
-     3. Sombra interna blanca (brillo superior) */
+  border: 3px solid #F5B041; 
   box-shadow: 
     0 8px 0 #F5B041,             
     inset -6px -6px 12px rgba(0, 0, 0, 0.04),      
     inset 6px 6px 12px rgba(255, 255, 255, 1); 
 }
-
-/* Al pasar el ratón, el bloque salta y la sombra dura crece */
-.dexus-card-elevada:hover {
-  transform: translateY(-6px);
-  box-shadow: 
-    0 14px 0 #F5B041,             
-    inset -6px -6px 12px rgba(0, 0, 0, 0.04),      
-    inset 6px 6px 12px rgba(255, 255, 255, 1);
-}
+/* ELIMINADO: El :hover de crecimiento de sombra (adiós lag de renderizado) */
 
 /* Outline: Cuaderno de actividades */
 .dexus-card-outline {
@@ -61,8 +42,7 @@
   box-shadow: none;
 }
 
+/* Aquí sí dejamos un pequeño feedback de color, pero sin movimiento físico */
 .dexus-card-outline:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Luz blanca al hacer hover */
-  transform: translateY(-4px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil al flotar */
+  background-color: rgba(255, 255, 255, 0.5); 
 }
