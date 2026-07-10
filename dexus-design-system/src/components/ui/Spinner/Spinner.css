@@ -4,16 +4,21 @@
   align-items: center;
 }
 
-/* El anillo base */
+/* --- EL HALO CELESTIAL --- */
 .dexus-spinner {
   border-radius: 50%;
-  /* Anillo de fondo color crema */
-  border: 6px solid #ECDDC0; 
-  /* El trozo azul que da vueltas */
-  border-top: 6px solid #5B8FB9; 
   
-  /* Animación suave y constante */
-  animation: dexus-spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  /* La base del halo: Un tono miel/oro muy transparente (casi invisible) */
+  border: 6px solid rgba(245, 176, 65, 0.15); 
+  
+  /* El foco de luz (la parte más brillante que rota) usando tu color Miel */
+  border-top: 6px solid #F5B041; 
+  
+  /* El secreto: un resplandor (glow) que envuelve la luz */
+  filter: drop-shadow(0 0 6px rgba(245, 176, 65, 0.8));
+  
+  /* Un giro suave, constante y pacífico (linear), un poco más lento (1.5s) */
+  animation: halo-spin 1.5s linear infinite;
 }
 
 /* Tamaños */
@@ -21,7 +26,8 @@
 .dexus-spinner-md { width: 40px; height: 40px; border-width: 6px; }
 .dexus-spinner-lg { width: 64px; height: 64px; border-width: 8px; }
 
-@keyframes dexus-spin {
+/* Animación de rotación */
+@keyframes halo-spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }

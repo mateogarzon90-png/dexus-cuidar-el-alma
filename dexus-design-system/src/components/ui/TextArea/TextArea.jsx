@@ -1,11 +1,11 @@
-import React, { useId, useRef, useEffect } from 'react';
+import React, { useId, useRef, useEffect, useState } from 'react';
 import './TextArea.css';
 
 const TextArea = ({ 
   label, 
   name,
-  value = '', 
-  onChange,
+  value: externalValue, // El valor que viene del padre (si existe)
+  onChange,             // La función del padre (si existe)
   placeholder, 
   maxLength, 
   disabled = false, 
@@ -14,13 +14,28 @@ const TextArea = ({
   const textareaId = useId();
   const textareaRef = useRef(null);
 
-  // Mantenemos la genial idea de Thais: Auto-resize
+  // 1. MEMORIA INTERNA: Por si el componente padre no nos controla
+  const [internalValue, setInternalValue] = useState(externalValue || '');
+
+  // 2. DECISIÓN: ¿Usamos el valor del padre o el nuestro?
+  // Si externalValue existe (no es undefined), somos controlados. Si no, somos libres.
+  const currentValue = externalValue !== undefined ? externalValue : internalValue;
+
+  // Efecto del Auto-resize de Thais (ahora usando currentValue)
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
       textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
     }
-  }, [value]);
+  }, [currentValue]);
+
+  // 3. MANEJADOR DE CAMBIOS: Actualizamos nuestra memoria y avisamos al padre
+  const handleChange = (e) => {
+    setInternalValue(e.target.value); // Guardamos internamente
+    if (onChange) {
+      onChange(e); // Avisamos al padre (por si está escuchando)
+    }
+  };
 
   return (
     <div className={`dexus-textarea-wrapper ${error ? 'dexus-textarea-has-error' : ''}`}>
@@ -35,8 +50,8 @@ const TextArea = ({
         id={textareaId}
         ref={textareaRef}
         name={name}
-        value={value}
-        onChange={onChange}
+        value={currentValue} /* Usamos el valor decidido en el paso 2 */
+        onChange={handleChange} /* Usamos nuestra función híbrida */
         placeholder={placeholder}
         disabled={disabled}
         maxLength={maxLength}
@@ -44,15 +59,14 @@ const TextArea = ({
         rows={3}
       />
 
-      {/* Footer para organizar el mensaje de error y el contador */}
       <div className="dexus-textarea-footer">
         {error ? (
           <span className="dexus-textarea-error-msg">{error}</span>
-        ) : <span />} {/* Span vacío para mantener el contador a la derecha */}
+        ) : <span />}
         
         {maxLength && (
           <span className="dexus-textarea-counter">
-            {value?.length || 0} / {maxLength}
+            {currentValue?.length || 0} / {maxLength}
           </span>
         )}
       </div>

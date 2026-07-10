@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* --- Gominolas Rectangulares (Estilo Cromo/Sticker) --- */
+.dexus-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Hacemos el padding más compacto para que no tenga proporciones de botón */
+  padding: 4px 10px; 
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.8rem; /* Un pelín más pequeño para marcar jerarquía */
+  font-weight: 700;
+  
+  /* CAMBIO CLAVE: De píldora (50px) a Rectángulo Blandito (Tipo cromo o azulejo) 
+     Esto rompe por completo la asociación con tus botones */
+  border-radius: 10px; 
+  border: 2px solid transparent; 
+  
+  /* Reducimos un poco el relieve para que parezca una pegatina más plana, 
+     no un botón gordo que invita a ser empujado */
+  box-shadow: 
+    inset -2px -2px 4px rgba(0, 0, 0, 0.12),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.5);
+    
+  /* Evitamos que el cursor cambie a "manita" (pointer), dejamos el flecha normal 
+     para que el sistema operativo también le diga al niño: "aquí no se hace clic" */
+  cursor: default; 
+}
+
+/* --- Variantes de color originales --- */
+.dexus-badge-info { 
+  background-color: #5B8FB9; 
+  color: #FFFFFF; 
+}
+
+.dexus-badge-success { 
+  background-color: #94B89C; 
+  color: #FFFFFF; 
+}
+
+.dexus-badge-warning { 
+  background-color: #F5B041; 
+  color: #3D2E26; 
+}
+
+.dexus-badge-danger { 
+  background-color: #C97064; 
+  color: #FFFFFF; 
+}

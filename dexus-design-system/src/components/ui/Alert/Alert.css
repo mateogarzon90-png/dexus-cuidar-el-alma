@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* --- CONTENEDOR PRINCIPAL --- */
 .dexus-alert {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   padding: 20px;
   border-radius: 24px;
-  border: 3px solid #3D2E26;
   font-family: 'Inter', system-ui, sans-serif;
   
-  /* Bloque sólido estable, no se mueve al hacer hover */
+  /* Textura de plastilina estable (igual que la Card normal) */
   box-shadow: 
-    4px 4px 0px #3D2E26, /* Sombra dura estilo cómic */
-    inset -4px -4px 10px rgba(0, 0, 0, 0.05),
-    inset 4px 4px 10px rgba(255, 255, 255, 0.6);
+    8px 8px 16px rgba(0, 0, 0, 0.04),             
+    inset -5px -5px 10px rgba(0, 0, 0, 0.03),      
+    inset 5px 5px 10px rgba(255, 255, 255, 0.9);
 }
 
 .dexus-alert-icon {
@@ -27,7 +29,7 @@
   margin: 0 0 4px 0;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #3D2E26;
+  color: #3D2E26; /* Mantenemos el texto oscuro para buena legibilidad */
 }
 
 .dexus-alert-message {
@@ -36,8 +38,28 @@
   line-height: 1.4;
 }
 
-/* Colores pastel muy suaves de fondo para que el texto se lea perfecto */
-.dexus-alert-information { background-color: #E6F0F9; }
-.dexus-alert-success { background-color: #EAF4EC; }
-.dexus-alert-warning { background-color: #FDF4E6; }
-.dexus-alert-error { background-color: #F9EBE9; }
+/* --- VARIANTES DE COLOR (Respetando la paleta original) --- */
+
+/* Information: Borde Azul Cielo (#5B8FB9) y fondo celeste muy suave */
+.dexus-alert-information { 
+  background-color: #F0F6FA; 
+  border: 3px solid #5B8FB9; 
+}
+
+/* Success: Borde Verde (#94B89C) y fondo verdoso muy suave */
+.dexus-alert-success { 
+  background-color: #F2F7F3; 
+  border: 3px solid #94B89C; 
+}
+
+/* Warning: Borde Miel (#F5B041) y fondo crema (igual que tus Cards) */
+.dexus-alert-warning { 
+  background-color: #FFF9F0; 
+  border: 3px solid #F5B041; 
+}
+
+/* Error: Borde Rojo Suave (#C97064) y fondo rojizo muy suave */
+.dexus-alert-error { 
+  background-color: #FDF3F2; 
+  border: 3px solid #C97064; 
+}
