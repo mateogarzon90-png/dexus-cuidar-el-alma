@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    width: 100%;
+    /* la tipografía del sistema (Inter, peso 400/500 según la tabla) */
+    font-family: 'Inter', sans-serif;
+}
+
+.input-label {
+    font-size: 14px;
+    /* tamaño de botones/etiquetas de la tabla */
+    font-weight: 500;
+    color: #3D2E26;
+    /* Marrón profundo */
+    margin-bottom: 6px;
+}
+
+.asterisk {
+    color: #C97064;
+    /* error semántico */
+}
+
+.input-field {
+    padding: 10px 12px;
+    font-size: 16px; /* Párrafo/Input */
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ECDDC0; /* borde de la paleta */
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #3D2E26;
+    outline: none;
+}
+
+/* Estado Focus */
+.input-field:focus {
+    border-color: #5B8FB9;
+}
+
+/* Estado Deshabilitado */
+.input-field:disabled {
+    background-color: #FBF6EC;
+    color: #6B5D55;
+    cursor: not-allowed;
+}
+
+/* CONTROL DE ERRORES */
+.has-error .input-field {
+    border-color: #C97064;
+}
+
+.error-message {
+    color: #C97064;
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
